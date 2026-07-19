@@ -1,0 +1,17 @@
+name: Build C++ Project
+
+on: [push]
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get the code from GitHub
+        uses: actions/checkout@v4
+
+      - name: Compile the code
+        run: g++ main.cpp -o my_program
+
+      - name: Run the program
+        run: ./my_program

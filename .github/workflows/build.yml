@@ -1,23 +1,17 @@
-name: Build C++ Project
+name: Build and Run with Docker
 
 on: [push]
 
 jobs:
-  build-and-run:
+  docker-job:
     runs-on: ubuntu-latest
 
     steps:
       - name: Get the code from GitHub
         uses: actions/checkout@v4
 
-      - name: Compile the code
-        run: g++ main.cpp -o my_program
+      - name: Build the Docker container
+        run: docker build -t my-cpp-box .
 
-      - name: Run the program
-        run: ./my_program
-
-      - name: Save the program (Mini-CD)
-        uses: actions/upload-artifact@v4
-        with:
-            name: my-compiled-program
-            path: my_program
+      - name: Run the Docker container
+        run: docker run my-cpp-box

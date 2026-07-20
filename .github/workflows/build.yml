@@ -15,3 +15,9 @@ jobs:
 
       - name: Run the program
         run: ./my_program
+
+      - name: Save the program (Mini-CD)
+        uses: actions/upload-artifact@v4
+        with:
+            name: my-compiled-program
+            path: my_program

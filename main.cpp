@@ -5,6 +5,6 @@
 #include <iostream>
 
 int main() {
-    std::couut << "This is my new feature! 11111111" << std::endl;
+    std::cout << "This is my new feature! 11111111" << std::endl;
     return 0;
 }
